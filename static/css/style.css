@@ -1666,7 +1666,7 @@ section {
       background: rgba(222, 224, 207, 0.11); }
 
 .social {
-  margin: 2em 0 0; }
+  margin: 2em 0; }
   .social li {
     display: inline-block;
     margin: .5em; }

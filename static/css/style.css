@@ -1561,7 +1561,8 @@ header {
   overflow: hidden; }
   @media screen and (max-width: 640px) {
     header {
-      height: 175px; } }
+      height: 175px;
+      position: relative; } }
   header span.border {
     position: absolute;
     bottom: 0;
@@ -1592,7 +1593,8 @@ header {
       background-size: 100%; }
       @media screen and (max-width: 640px) {
         header h1 span {
-          margin-right: 0; } }
+          margin-right: 0;
+          margin-top: 1em; } }
 
 section.double > div > div {
   position: relative;
@@ -1613,7 +1615,7 @@ section.double > div > div {
   text-align: center; }
   @media screen and (max-width: 640px) {
     .container {
-      padding-top: 175px; } }
+      padding-top: 0; } }
   .container p {
     color: rgba(255, 201, 7, 0.5); }
     .container p a {

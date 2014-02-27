@@ -135,6 +135,7 @@ header {
   overflow: hidden;
   @include media(max-width 640px) {
     height: $header-height/2;
+    position: relative;
   }
   span.border {
     position: absolute;
@@ -167,6 +168,7 @@ header {
       background-size: 100%;
       @include media(max-width 640px) {
         margin-right: 0;
+        margin-top: 1em;
       }
     }
   }
@@ -190,7 +192,7 @@ $containerColor: fade-out($tan, .89);
   background: $navyDark;
   text-align: center;
   @include media(max-width 640px) {
-    padding-top: $header-height/2;
+    padding-top: 0;
   }
   p {
     color: fade-out($yellow, .5);

@@ -1,0 +1,18 @@
+{
+  "name": "halihax",
+  "version": "0.0.1",
+  "description": "",
+  "engines": {
+    "node": "0.10.x"
+  },
+  "main": "app.js",
+  "private": true,
+  "scripts": {
+    "start": "foreman start"
+  },
+  "dependencies": {
+    "express": "3.4.8",
+    "ejs": "",
+    "ejs-locals": ""
+  }
+}

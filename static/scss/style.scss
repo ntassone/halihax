@@ -1,0 +1,250 @@
+@import "reset";
+@import "icons";
+@import "bourbon/bourbon";
+
+//Grid
+$gutter: 0em;
+@import "neat/neat";
+
+$header-height: 350px;
+$header-min: 85px;
+$header-max: 325px;
+
+
+//Colors
+$navy: #002350;
+$navyDark: #030D13;
+$yellow: #ffc907;
+$tan: #dee0cf;
+
+//Fonts
+$font-header: "refrigerator-deluxe";
+$font-body: "rooney-web",sans-serif;
+
+html {
+  height: 100%;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: $font-body;
+  background: $navyDark;
+}
+
+h1, h2, h3, h4 {
+  font-family: $font-header;
+  font-weight: normal;
+}
+
+h2 {
+  padding: 1em 0;
+  font-size: 2em;
+  letter-spacing: .025em;
+  color: #ddd;
+  font-family: $font-header;
+  font-weight: 200;
+}
+
+h3 {
+  font-size: 2em;
+  text-transform: uppercase;
+  font-weight: 100;
+}
+
+p {
+  margin: .5em 0;
+  line-height: 1.25;
+}
+
+a {
+  color: white;
+  @include transition(color .5s $ease-out-expo);
+}
+
+strong {
+  font-weight: 600;
+}
+
+img {
+  max-width: 100%;
+}
+
+button {
+  display: inline-block;
+  padding: .75em 2.5em;
+  line-height: 1;
+  border: 0;
+  border-radius: 1.3em;
+  font-size: 1.5em;
+  font-family: $font-header;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  background: fade-out($yellow, .2);
+  color: $navyDark;
+  cursor: pointer;
+  box-shadow: 0 0 250px 30px fade-out($yellow, .7);
+  @include transition(background .6s ease, box-shadow 2s ease, color .25s linear);
+  &:hover {
+    background: transparent;
+    color: $yellow;
+    box-shadow: 0 0 300px 30px fade-out($yellow, .2);
+  }
+}
+
+.map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  @include linear-gradient(darken($navyDark, 10%), $navy);
+  box-shadow: 0 0 2px 0 fade-out($navy, .3);
+  iframe {
+    opacity: .8;
+    z-index: -1;
+    background: $navy;
+  }
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: $header-min;
+  height: $header-height;
+  z-index: 100;
+  text-align: center;
+  overflow: hidden;
+  span.border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: fade-out($yellow, .6);
+  }
+  h1 {
+    display: block;
+    padding: 0;
+    letter-spacing: .05em;
+    font-size: 7em;
+    text-align: center;
+    font-weight: 400;
+    color: white;
+    font-family: $font-header;
+    pointer-events: none;
+    span {
+      content: "";
+      display: inline-block;
+      margin-right: 20px;
+      width: 113px;
+      height: 50px;
+      background: url(../img/logo.svg) no-repeat;
+      background-size: 100%;
+    }
+  }
+
+}
+
+$containerColor: fade-out($tan, .89);
+
+%vertical-center {
+  position: relative;
+  top: 50%;
+  @include transform(translateY(-50%));
+}
+
+.container {
+  min-height: 200px;
+  padding-top: $header-height;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: white;
+  background: $navyDark;
+  text-align: center;
+  p {
+    color: fade-out($yellow, .5);
+    a {
+      color: fade-out($yellow, .2);
+      &:hover {
+        color: $yellow;
+      }
+    }
+  }
+}
+
+section {
+  @include outer-container;
+  &.double {
+    > div {
+      @include span-columns(6);
+      height: 200px;
+      background: $containerColor;
+      overflow: hidden;
+      @include media(max-width 500px) {
+        height: auto;
+        @include fill-parent;
+      }
+      p {
+        margin: 1em auto;
+        max-width: 75%;
+      }
+      &:last-child {
+        background: transparent;
+        border: 5px solid $containerColor;
+      }
+      > div {
+        @extend %vertical-center;
+        @include media(max-width 500px) {
+          top: auto;
+          padding: 1em;
+          @include transform(translateY(0));
+        }
+      }
+    }
+  }
+  &#speakers {
+    min-height: 100px;
+    margin-top: 2em;
+    padding: 2em 1em 1em;
+    border: 1px solid fade-out($yellow, .8);
+    border-radius: 2px;
+    h1 {
+      font-size: 2em;
+      text-transform: uppercase;
+      font-weight: 100;
+      letter-spacing: .05em;
+      color: fade-out($yellow, .6);
+    }
+    h5 {
+      display: inline-block;
+      padding: .5em 1em;
+      background: $containerColor;
+    }
+  }
+}
+
+.social {
+  margin: 2em 0 0;
+  li {
+    display: inline-block;
+    margin: .5em;
+  }
+  a {
+    color: fade-out(white, .5);
+    text-decoration: none;
+    font-size: 23px;
+    &:hover {
+      color: $yellow;
+    }
+  }
+}

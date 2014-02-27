@@ -72,7 +72,7 @@ img {
   max-width: 100%;
 }
 
-button {
+.btn {
   display: inline-block;
   padding: .75em 2.5em;
   line-height: 1;
@@ -83,6 +83,7 @@ button {
   font-style: italic;
   text-transform: uppercase;
   letter-spacing: .05em;
+  text-decoration: none;
   background: fade-out($yellow, .2);
   color: $navyDark;
   cursor: pointer;
@@ -95,6 +96,12 @@ button {
   }
 }
 
+@include keyframes(moveMap) {
+  0% { top: 0; }
+  50% { top: -150px; }
+  100% { top: 0; }
+}
+
 .map {
   position: absolute;
   top: 0;
@@ -105,6 +112,8 @@ button {
   overflow: hidden;
   @include linear-gradient(darken($navyDark, 10%), $navy);
   box-shadow: 0 0 2px 0 fade-out($navy, .3);
+  //Animation
+  // @include animation(moveMap 25s ease-in-out infinite);
   iframe {
     opacity: .8;
     z-index: -1;

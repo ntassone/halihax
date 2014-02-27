@@ -13,5 +13,7 @@ function shrinkHeader() {
 }
 
 $(window).scroll(function(){
-  shrinkHeader();
+  if ($(window).width() > 640 ){
+    shrinkHeader();
+  }
 });

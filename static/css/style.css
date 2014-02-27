@@ -1559,6 +1559,9 @@ header {
   z-index: 100;
   text-align: center;
   overflow: hidden; }
+  @media screen and (max-width: 640px) {
+    header {
+      height: 175px; } }
   header span.border {
     position: absolute;
     bottom: 0;
@@ -1576,6 +1579,9 @@ header {
     color: white;
     font-family: "refrigerator-deluxe";
     pointer-events: none; }
+    @media screen and (max-width: 640px) {
+      header h1 {
+        font-size: 0; } }
     header h1 span {
       content: "";
       display: inline-block;
@@ -1584,6 +1590,9 @@ header {
       height: 50px;
       background: url(../img/logo.svg) no-repeat;
       background-size: 100%; }
+      @media screen and (max-width: 640px) {
+        header h1 span {
+          margin-right: 0; } }
 
 section.double > div > div {
   position: relative;
@@ -1602,6 +1611,9 @@ section.double > div > div {
   color: white;
   background: #030d13;
   text-align: center; }
+  @media screen and (max-width: 640px) {
+    .container {
+      padding-top: 175px; } }
   .container p {
     color: rgba(255, 201, 7, 0.5); }
     .container p a {

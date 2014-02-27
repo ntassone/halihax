@@ -133,6 +133,9 @@ header {
   z-index: 100;
   text-align: center;
   overflow: hidden;
+  @include media(max-width 640px) {
+    height: $header-height/2;
+  }
   span.border {
     position: absolute;
     bottom: 0;
@@ -151,6 +154,9 @@ header {
     color: white;
     font-family: $font-header;
     pointer-events: none;
+    @include media(max-width 640px) {
+      font-size: 0;
+    }
     span {
       content: "";
       display: inline-block;
@@ -159,6 +165,9 @@ header {
       height: 50px;
       background: url(../img/logo.svg) no-repeat;
       background-size: 100%;
+      @include media(max-width 640px) {
+        margin-right: 0;
+      }
     }
   }
 
@@ -180,6 +189,9 @@ $containerColor: fade-out($tan, .89);
   color: white;
   background: $navyDark;
   text-align: center;
+  @include media(max-width 640px) {
+    padding-top: $header-height/2;
+  }
   p {
     color: fade-out($yellow, .5);
     a {

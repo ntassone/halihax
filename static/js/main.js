@@ -14,6 +14,6 @@ function shrinkHeader() {
 
 $(window).scroll(function(){
   if ($(window).width() > 640 ){
-    shrinkHeader();
+    //shrinkHeader();
   }
 });

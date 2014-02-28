@@ -1548,7 +1548,7 @@ img {
     background: #002350; }
 
 header {
-  position: fixed;
+  position: relative;
   top: 0;
   width: 100%;
   display: flex;
@@ -1607,7 +1607,6 @@ section.double > div > div {
 
 .container {
   min-height: 200px;
-  padding-top: 350px;
   padding-left: 15px;
   padding-right: 15px;
   color: white;

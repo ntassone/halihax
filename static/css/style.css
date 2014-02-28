@@ -1551,9 +1551,6 @@ header {
   position: relative;
   top: 0;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   min-height: 85px;
   height: 350px;
   z-index: 100;
@@ -1571,7 +1568,22 @@ header {
     height: 6px;
     background: rgba(255, 201, 7, 0.4); }
   header #logo {
-    text-align: center; }
+    text-align: center;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%); }
+    @media screen and (max-width: 640px) {
+      header #logo {
+        top: auto;
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -o-transform: translateY(0);
+        transform: translateY(0); } }
     header #logo h1 {
       display: inline-block;
       padding: 0;
@@ -1595,15 +1607,6 @@ header {
       @media screen and (max-width: 640px) {
         header #logo .mark {
           margin: 1em 0 1.5em; } }
-
-section.double > div > div {
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%); }
 
 .container {
   min-height: 200px;

@@ -2,6 +2,12 @@
 @import "icons";
 @import "bourbon/bourbon";
 
+@mixin vertical-center {
+  position: relative;
+  top: 50%;
+  @include transform(translateY(-50%));
+}
+
 //Grid
 $gutter: 0em;
 @import "neat/neat";
@@ -125,9 +131,6 @@ header {
   position: relative;
   top: 0;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   min-height: $header-min;
   height: $header-height;
   z-index: 100;
@@ -147,6 +150,11 @@ header {
   }
   #logo {
     text-align: center;
+    @include vertical-center();
+    @include media(max-width 640px) {
+      top: auto;
+      @include transform(translateY(0));
+    }
     h1 {
       display: inline-block;
       padding: 0;
@@ -177,12 +185,6 @@ header {
 }
 
 $containerColor: fade-out($tan, .89);
-
-%vertical-center {
-  position: relative;
-  top: 50%;
-  @include transform(translateY(-50%));
-}
 
 .container {
   min-height: 200px;

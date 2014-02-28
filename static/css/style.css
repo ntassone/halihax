@@ -1655,15 +1655,23 @@ section {
     section.double > div:last-child {
       background: transparent;
       border: 5px solid rgba(222, 224, 207, 0.11); }
-    @media screen and (max-width: 500px) {
-      section.double > div > div {
-        top: auto;
-        padding: 1em;
-        -webkit-transform: translateY(0);
-        -moz-transform: translateY(0);
-        -ms-transform: translateY(0);
-        -o-transform: translateY(0);
-        transform: translateY(0); } }
+    section.double > div > div {
+      position: relative;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      transform: translateY(-50%); }
+      @media screen and (max-width: 500px) {
+        section.double > div > div {
+          top: auto;
+          padding: 1em;
+          -webkit-transform: translateY(0);
+          -moz-transform: translateY(0);
+          -ms-transform: translateY(0);
+          -o-transform: translateY(0);
+          transform: translateY(0); } }
   section#speakers {
     min-height: 100px;
     margin-top: 2em;

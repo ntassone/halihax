@@ -229,7 +229,7 @@ section {
         border: 5px solid $containerColor;
       }
       > div {
-        @extend %vertical-center;
+        @include vertical-center();
         @include media(max-width 500px) {
           top: auto;
           padding: 1em;

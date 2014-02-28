@@ -1433,7 +1433,7 @@ body {
   background: #030d13; }
 
 h1, h2, h3, h4 {
-  font-family: "refrigerator-deluxe";
+  font-family: "refrigerator-deluxe", sans-serif;
   font-weight: normal; }
 
 h2 {
@@ -1441,7 +1441,7 @@ h2 {
   font-size: 2em;
   letter-spacing: .025em;
   color: #ddd;
-  font-family: "refrigerator-deluxe";
+  font-family: "refrigerator-deluxe", sans-serif;
   font-weight: 200; }
 
 h3 {
@@ -1472,7 +1472,7 @@ img {
   border: 0;
   border-radius: 1.3em;
   font-size: 1.5em;
-  font-family: "refrigerator-deluxe";
+  font-family: "refrigerator-deluxe", sans-serif;
   font-style: italic;
   text-transform: uppercase;
   letter-spacing: .05em;
@@ -1561,7 +1561,7 @@ header {
   overflow: hidden; }
   @media screen and (max-width: 640px) {
     header {
-      height: 175px;
+      height: auto;
       position: relative; } }
   header span.border {
     position: absolute;
@@ -1570,20 +1570,21 @@ header {
     width: 100%;
     height: 6px;
     background: rgba(255, 201, 7, 0.4); }
-  header h1 {
-    display: block;
-    padding: 0;
-    letter-spacing: .05em;
-    font-size: 7em;
-    text-align: center;
-    font-weight: 400;
-    color: white;
-    font-family: "refrigerator-deluxe";
-    pointer-events: none; }
-    @media screen and (max-width: 640px) {
-      header h1 {
-        font-size: 0; } }
-    header h1 span {
+  header #logo {
+    text-align: center; }
+    header #logo h1 {
+      display: inline-block;
+      padding: 0;
+      letter-spacing: .05em;
+      font-size: 7em;
+      font-weight: 400;
+      color: white;
+      font-family: "refrigerator-deluxe", sans-serif;
+      pointer-events: none; }
+      @media screen and (max-width: 640px) {
+        header #logo h1 {
+          display: none; } }
+    header #logo .mark {
       content: "";
       display: inline-block;
       margin-right: 20px;
@@ -1592,9 +1593,8 @@ header {
       background: url(../img/logo.svg) no-repeat;
       background-size: 100%; }
       @media screen and (max-width: 640px) {
-        header h1 span {
-          margin-right: 0;
-          margin-top: 1em; } }
+        header #logo .mark {
+          margin: 1em 0 1.5em; } }
 
 section.double > div > div {
   position: relative;

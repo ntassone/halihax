@@ -18,8 +18,8 @@ $yellow: #ffc907;
 $tan: #dee0cf;
 
 //Fonts
-$font-header: "refrigerator-deluxe";
-$font-body: "rooney-web",sans-serif;
+$font-header: "refrigerator-deluxe", sans-serif;
+$font-body: "rooney-web", sans-serif;
 
 html {
   height: 100%;
@@ -134,7 +134,7 @@ header {
   text-align: center;
   overflow: hidden;
   @include media(max-width 640px) {
-    height: $header-height/2;
+    height: auto;
     position: relative;
   }
   span.border {
@@ -145,20 +145,22 @@ header {
     height: 6px;
     background: fade-out($yellow, .6);
   }
-  h1 {
-    display: block;
-    padding: 0;
-    letter-spacing: .05em;
-    font-size: 7em;
+  #logo {
     text-align: center;
-    font-weight: 400;
-    color: white;
-    font-family: $font-header;
-    pointer-events: none;
-    @include media(max-width 640px) {
-      font-size: 0;
+    h1 {
+      display: inline-block;
+      padding: 0;
+      letter-spacing: .05em;
+      font-size: 7em;
+      font-weight: 400;
+      color: white;
+      font-family: $font-header;
+      pointer-events: none;
+      @include media(max-width 640px) {
+        display: none;
+      }
     }
-    span {
+    .mark {
       content: "";
       display: inline-block;
       margin-right: 20px;
@@ -167,8 +169,7 @@ header {
       background: url(../img/logo.svg) no-repeat;
       background-size: 100%;
       @include media(max-width 640px) {
-        margin-right: 0;
-        margin-top: 1em;
+        margin: 1em 0 1.5em;
       }
     }
   }

@@ -1422,6 +1422,12 @@ table {
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
+#sandy-walsh .avatar {
+  background-image: url("../img/sandy_walsh.jpg"); }
+
+#matt-creager .avatar {
+  background-image: url("../img/matt_creager.jpg"); }
+
 html {
   height: 100%; }
 
@@ -1437,7 +1443,6 @@ h1, h2, h3, h4 {
   font-weight: normal; }
 
 h2 {
-  padding: 1em 0;
   font-size: 2em;
   letter-spacing: .025em;
   color: #ddd;
@@ -1537,10 +1542,6 @@ img {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-color: black;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, black), color-stop(100%, #002350));
-  background-image: -webkit-linear-gradient(black, #002350);
-  background-image: linear-gradient(black, #002350);
   box-shadow: 0 0 2px 0 rgba(0, 35, 80, 0.7); }
   .map iframe {
     opacity: .8;
@@ -1553,6 +1554,7 @@ header {
   width: 100%;
   min-height: 85px;
   height: 350px;
+  margin-bottom: 50px;
   z-index: 100;
   text-align: center;
   overflow: hidden; }
@@ -1629,7 +1631,11 @@ section {
   *zoom: 1;
   max-width: 68em;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  margin: 50px auto;
+  border: 1px solid rgba(222, 224, 207, 0.15);
+  border-radius: 3px;
+  overflow: hidden; }
   section:before, section:after {
     content: " ";
     display: table; }
@@ -1639,22 +1645,13 @@ section {
     float: left;
     display: block;
     margin-right: 0%;
-    width: 50%;
-    height: 200px;
-    background: rgba(222, 224, 207, 0.11);
-    overflow: hidden; }
+    width: 50%; }
     section.double > div:last-child {
       margin-right: 0; }
     @media screen and (max-width: 500px) {
       section.double > div {
         height: auto;
         width: 100%; } }
-    section.double > div p {
-      margin: 1em auto;
-      max-width: 75%; }
-    section.double > div:last-child {
-      background: transparent;
-      border: 5px solid rgba(222, 224, 207, 0.11); }
     section.double > div > div {
       position: relative;
       top: 50%;
@@ -1672,31 +1669,115 @@ section {
           -ms-transform: translateY(0);
           -o-transform: translateY(0);
           transform: translateY(0); } }
+  section#date > div {
+    height: 200px; }
+    @media screen and (max-width: 500px) {
+      section#date > div {
+        height: auto; } }
+    section#date > div p {
+      margin: 1em auto;
+      max-width: 75%; }
+    section#date > div:first-child {
+      background: rgba(222, 224, 207, 0.07); }
   section#speakers {
-    min-height: 100px;
     margin-top: 2em;
-    padding: 2em 1em 1em;
-    border: 1px solid rgba(255, 201, 7, 0.2);
-    border-radius: 2px; }
+    border-color: rgba(222, 224, 207, 0.15);
+    border-radius: 2px;
+    text-align: left; }
+    section#speakers > div {
+      border-right: 1px solid rgba(222, 224, 207, 0.15);
+      -webkit-transition: background 1s cubic-bezier(0.19, 1, 0.22, 1);
+      -moz-transition: background 1s cubic-bezier(0.19, 1, 0.22, 1);
+      transition: background 1s cubic-bezier(0.19, 1, 0.22, 1); }
+      @media screen and (max-width: 550px) {
+        section#speakers > div {
+          border-right: 0;
+          border-bottom: 1px solid rgba(222, 224, 207, 0.15); } }
+      @media screen and (max-width: 1024px) {
+        section#speakers > div {
+          width: 100%; } }
+      section#speakers > div:hover {
+        background: rgba(255, 201, 7, 0.1); }
+      section#speakers > div:last-child {
+        border: 0; }
+    section#speakers aside {
+      float: left;
+      display: block;
+      margin-right: 0%;
+      width: 41.66667%; }
+      section#speakers aside:last-child {
+        margin-right: 0; }
+      @media screen and (max-width: 550px) {
+        section#speakers aside {
+          width: 100%;
+          text-align: center; } }
+    section#speakers .avatar {
+      display: inline-block;
+      height: 150px;
+      width: 150px;
+      border-radius: 50%;
+      background-size: 100%; }
+    section#speakers article {
+      float: left;
+      display: block;
+      margin-right: 0%;
+      width: 58.33333%; }
+      section#speakers article:last-child {
+        margin-right: 0; }
+      @media screen and (max-width: 550px) {
+        section#speakers article {
+          width: 100%;
+          text-align: center;
+          margin-top: 50px; } }
     section#speakers h1 {
+      padding: .75em;
       font-size: 2em;
       text-transform: uppercase;
       font-weight: 100;
       letter-spacing: .05em;
-      color: rgba(255, 201, 7, 0.4); }
+      color: rgba(255, 255, 255, 0.8);
+      text-align: center;
+      border-bottom: 1px solid rgba(222, 224, 207, 0.15); }
+      section#speakers h1:only-child {
+        border: 0; }
+    section#speakers h2 {
+      margin-bottom: 5px;
+      font-size: 2.25em;
+      color: rgba(255, 201, 7, 0.8);
+      font-weight: 500;
+      letter-spacing: 0; }
     section#speakers h5 {
-      display: inline-block;
-      padding: .5em 1em;
-      background: rgba(222, 224, 207, 0.11); }
+      font-family: "refrigerator-deluxe", sans-serif;
+      font-size: 1.2em; }
+      section#speakers h5 a {
+        color: rgba(222, 224, 207, 0.85);
+        text-decoration: none; }
+        section#speakers h5 a:hover {
+          color: white; }
+    section#speakers p {
+      font-size: .9em;
+      line-height: 1.5; }
+    section#speakers > div {
+      padding: 50px; }
 
 .social {
-  margin: 2em 0; }
+  display: inline-block;
+  margin: 0 auto 4em;
+  padding: .25em 1.5em;
+  background: rgba(255, 201, 7, 0);
+  border: 2px solid rgba(255, 201, 7, 0.2);
+  border-radius: 25px;
+  -webkit-transition: background 1s cubic-bezier(0.19, 1, 0.22, 1);
+  -moz-transition: background 1s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: background 1s cubic-bezier(0.19, 1, 0.22, 1); }
+  .social:hover {
+    background: rgba(255, 201, 7, 0.1); }
   .social li {
     display: inline-block;
-    margin: .5em; }
+    margin: .5em .25em; }
   .social a {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
     font-size: 23px; }
     .social a:hover {
-      color: #ffc907; }
+      color: rgba(255, 201, 7, 0.8); }

@@ -12,8 +12,12 @@ function shrinkHeader() {
   }
 }
 
-$(window).scroll(function(){
+$(window).scroll(function() {
   if ($(window).width() > 640 ){
     //shrinkHeader();
   }
+});
+
+$(window).bind("load", function() {
+  $('body').addClass('page-loaded');
 });

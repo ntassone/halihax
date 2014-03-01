@@ -15,6 +15,7 @@ $gutter: 0em;
 $header-height: 350px;
 $header-min: 85px;
 $header-max: 325px;
+$page-margin: 50px;
 
 
 //Colors
@@ -26,6 +27,9 @@ $tan: #dee0cf;
 //Fonts
 $font-header: "refrigerator-deluxe", sans-serif;
 $font-body: "rooney-web", sans-serif;
+
+#sandy-walsh .avatar  { background-image: url('../img/sandy_walsh.jpg'); }
+#matt-creager .avatar { background-image: url('../img/matt_creager.jpg'); }
 
 html {
   height: 100%;
@@ -46,7 +50,6 @@ h1, h2, h3, h4 {
 }
 
 h2 {
-  padding: 1em 0;
   font-size: 2em;
   letter-spacing: .025em;
   color: #ddd;
@@ -116,7 +119,7 @@ img {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  @include linear-gradient(darken($navyDark, 10%), $navy);
+
   box-shadow: 0 0 2px 0 fade-out($navy, .3);
   //Animation
   // @include animation(moveMap 25s ease-in-out infinite);
@@ -133,6 +136,7 @@ header {
   width: 100%;
   min-height: $header-min;
   height: $header-height;
+  margin-bottom: $page-margin;
   z-index: 100;
   text-align: center;
   overflow: hidden;
@@ -184,11 +188,10 @@ header {
 
 }
 
-$containerColor: fade-out($tan, .89);
+$border: fade-out($tan, .85);
 
 .container {
   min-height: 200px;
-  // padding-top: $header-height;
   padding-left: 15px;
   padding-right: 15px;
   color: white;
@@ -210,23 +213,16 @@ $containerColor: fade-out($tan, .89);
 
 section {
   @include outer-container;
+  margin: $page-margin auto;
+  border: 1px solid $border;
+  border-radius: 3px;
+  overflow: hidden;
   &.double {
     > div {
       @include span-columns(6);
-      height: 200px;
-      background: $containerColor;
-      overflow: hidden;
       @include media(max-width 500px) {
         height: auto;
         @include fill-parent;
-      }
-      p {
-        margin: 1em auto;
-        max-width: 75%;
-      }
-      &:last-child {
-        background: transparent;
-        border: 5px solid $containerColor;
       }
       > div {
         @include vertical-center();
@@ -238,39 +234,129 @@ section {
       }
     }
   }
+  &#date {
+    > div {
+      height: 200px;
+      @include media(max-width 500px) {
+        height: auto;
+      }
+      p {
+        margin: 1em auto;
+        max-width: 75%;
+      }
+      &:first-child {
+        background: fade-out($tan, .93);
+      }
+    }
+  }
   &#speakers {
-    min-height: 100px;
     margin-top: 2em;
-    padding: 2em 1em 1em;
-    border: 1px solid fade-out($yellow, .8);
+    border-color: $border;
     border-radius: 2px;
+    text-align: left;
+    > div {
+      border-right: 1px solid $border;
+      @include media(max-width 550px) {
+        border-right: 0;
+        border-bottom: 1px solid $border;
+      }
+      @include transition(background 1s $ease-out-expo);
+      @include media(max-width 1024px) {
+        @include fill-parent;
+      }
+
+      &:hover {
+        background: fade-out($yellow, .9);
+      }
+      &:last-child {
+        border: 0;
+      }
+    }
+    aside {
+      @include span-columns(5);
+      @include media(max-width 550px) {
+        @include fill-parent;
+        text-align: center;
+      }
+    }
+    .avatar {
+      $square: 150px;
+      display: inline-block;
+      height: $square;
+      width: $square;
+      border-radius: 50%;
+      background-size: 100%;
+    }
+    article {
+      @include span-columns(7);
+      @include media(max-width 550px) {
+        @include fill-parent;
+        text-align: center;
+        margin-top: $page-margin;
+      }
+    }
     h1 {
+      padding: .75em;
       font-size: 2em;
       text-transform: uppercase;
       font-weight: 100;
       letter-spacing: .05em;
-      color: fade-out($yellow, .6);
+      color: fade-out(white, .2);
+      text-align: center;
+      border-bottom: 1px solid $border;
+      &:only-child {
+        border: 0;
+      }
+    }
+    h2 {
+      margin-bottom: 5px;
+      font-size: 2.25em;
+      color: fade-out($yellow, .2);
+      font-weight: 500;
+      letter-spacing: 0;
     }
     h5 {
-      display: inline-block;
-      padding: .5em 1em;
-      background: $containerColor;
+      font-family: $font-header;
+      font-size: 1.2em;
+      a {
+        color: fade-out($tan, .15);
+        text-decoration: none;
+        &:hover {
+          color: white;
+        }
+      }
+    }
+    p {
+      font-size: .9em;
+      line-height: 1.5;
+    }
+    > div {
+      padding: $page-margin;
     }
   }
 }
 
 .social {
-  margin: 2em 0;
+  display: inline-block;
+  margin: 0 auto 4em;
+  padding: .25em 1.5em;
+  background: fade-out($yellow, 1);
+  border: 2px solid fade-out($yellow, .8);
+  border-radius: 25px;
+  @include transition(background 1s $ease-out-expo);
+  &:hover {
+    background: fade-out($yellow, .9);
+  }
   li {
     display: inline-block;
-    margin: .5em;
+    margin: .5em .25em;
   }
   a {
-    color: fade-out(white, .5);
+    color: fade-out(white, .3);
     text-decoration: none;
     font-size: 23px;
     &:hover {
-      color: $yellow;
+      color: fade-out($yellow, .2);
     }
   }
 }

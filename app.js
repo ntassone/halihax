@@ -40,12 +40,6 @@ app.all('/', function(req, res) {
   });
 });
 
-app.all('/dev', function(req, res) {
-  res.render('dev.ejs', {
-    connectUrl: process.env.GOINSTANT_CONNECT_URL
-  });
-});
-
 var port = app.get('port');
 console.log('Listening on ' + port);
 app.listen(port);
